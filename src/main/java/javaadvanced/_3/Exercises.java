@@ -20,6 +20,7 @@ public class Exercises {
         List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c", "a", "b", "c", "a", "b", "c"));
 
         // Your code here
+        list = new ArrayList<>(new HashSet<>(list));
 
         if (list.size() == 3) {
             System.out.println("Exercise 1: Success");
@@ -36,11 +37,14 @@ public class Exercises {
         // Your code here
         List<String> list = Arrays.asList("apple", "banana", "apple", "orange", "kiwi", "banana");
         Set<String> set = Set.of("apple", "banana");
-        // toSet(list); <-- uncomment
-        // toSet(set); <-- uncomment
+        System.out.println(toSet(list));
+        System.out.println(toSet(set));
     }
 
     // Write your method for exercise 2 here
+    public static Set toSet(Collection collection) {
+        return new TreeSet<>(collection);
+    }
 
 
     /**
@@ -56,6 +60,15 @@ public class Exercises {
         // from the Map and then increment it by 1, if no previous value exists, use 0 as the previous value.
 
         // Your code here
+        for (String word : words) {
+            int prevValue = 0;
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, (prevValue + 1));
+            }
+        }
+        System.out.println(wordCount);
     }
 
     /**
@@ -65,40 +78,43 @@ public class Exercises {
      *    and explain why you chose that data structure.
      *
      *    1 - You want to store the students in order of their arrival
-     *    Answer:
+     *    Answer: array list
      *
      *    2 - You want to store the students in a class and their grades
-     *    Answer:
+     *    Answer: map
      *
      *    3 - You want to store the countries in the world in order of age
-     *    Answer:
+     *    Answer: treemap
      *
      *    4 - You want to store the products available for purchase in an online store, along with their corresponding prices.
-     *    Answer:
+     *    Answer: map
      *
      *    5 - You want to store the employees at a company in the order you added them
-     *    Answer:
+     *    Answer: list
      *
      *    6 - You want to store the cities in a particular state, along with their populations.
-     *    Answer:
+     *    Answer: map
      *
      *    7 - You want to store the books in a library, along with their authors and publication dates.
-     *    Answer:
+     *    Answer: list
      *
      *    8 - You want to store the courses offered at a university, along with the professors teaching each course.
-     *    Answer:
+     *    Answer: map
      *
      *    9 - You want to store the movies in a movie rental store, along with their ratings and release dates.
-     *    Answer:
+     *    Answer: list
      *
      *    10 - You want to store the flights available for booking on an airline, along with their destinations and departure times.
-     *    Answer:
+     *    Answer: list
      *
      *    11 - You want to store the articles on a news website, along with their titles and publication dates.
-     *    Answer:
+     *    Answer: list
      *
      *    12 - You want to store the songs in a music streaming service, along with their artists and album names.
-     *    Answer:
+     *    Answer: List
      */
 
+
+
 }
+
