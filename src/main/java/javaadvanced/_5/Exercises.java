@@ -1,5 +1,10 @@
 package javaadvanced._5;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class Exercises {
     public static void main(String[] args) {
         exercise1();
@@ -15,7 +20,12 @@ public class Exercises {
     private static void exercise1() {
         System.out.println("Exercise 1: ");
         // Your code here
-//        Files.createFile(Path.of("Test.txt"));
+        try {
+            Files.createFile(Path.of("Test.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error creating file");
+        }
     }
 
     /**
@@ -28,8 +38,12 @@ public class Exercises {
     private static void exercise2() {
         System.out.println("\nExercise 2: ");
         // Your code here
-
         String userInputFileName = "test-file.txt";
+        try {
+            FileReader reader = new FileReader(userInputFileName);
+        } catch (IOException e) {
+            System.out.println("File could not be found");
+        }
     }
 
     /**
@@ -42,8 +56,12 @@ public class Exercises {
     private static void exercise3() {
         System.out.println("\nExercise 3: ");
         // Your code here
+        try{
+            Integer.parseInt("house");
+        } catch (NumberFormatException e) {
+            System.out.println("Input was not a valid integer");
+        }
 
-        Integer.parseInt("house");
     }
 
     /**
@@ -62,10 +80,14 @@ public class Exercises {
 
         Double num1 = 10.0;
         String num2AsString = "0.0";
-        // try{
+         try{
             System.out.println(num1/Double.parseDouble(num2AsString));
-        //}
+        }
         // Your catch blocks here
+         catch (NumberFormatException | ArithmeticException e) {
+             System.out.println("Error: " + e.getMessage());
+         }
+    }
 
     }
-}
+

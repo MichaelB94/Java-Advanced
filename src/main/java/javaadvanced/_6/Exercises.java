@@ -1,11 +1,14 @@
 package javaadvanced._6;
 
+import java.util.Arrays;
+
 public class Exercises {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         exercise1();
         exercise2();
         exercise3();
         exercise4();
+        exercise5();
     }
 
     private enum YouCanUseClassLocalEnumsLikeThis {
@@ -24,6 +27,13 @@ public class Exercises {
     private static void exercise1() {
         System.out.println("\nExercise 1: ");
         // Your code here
+        enum Days {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY}
+
+        for (Days day : Days.values()) {
+            System.out.println(day);
+        }
+
+
     }
 
     /**
@@ -38,6 +48,21 @@ public class Exercises {
     private static void exercise2() {
         System.out.println("\nExercise 2: ");
         // Your code here
+        enum Seasons {
+            SPRING("March","April","May"),
+            SUMMER("June","July","August"),
+            FALL("September","October","November"),
+            WINTER("December","January","February");
+            private final String[] months;
+            Seasons(String... months) {
+                this.months=months;
+            }
+            public String[] getMonths() {
+                return months;
+            }
+        }
+        Seasons season = Seasons.SUMMER;
+        System.out.println(season + ": " + Arrays.toString(season.getMonths()));
     }
 
     /**
@@ -46,12 +71,26 @@ public class Exercises {
      *
      * Create an enum called "TrafficLight" with the values "RED", "YELLOW", "GREEN".
      *
-     * Write code that simulates the behavior of a traffic light. It should take the current state of the traffic light as input and return the next state.
-     *
+     * Write code that simulates the behavior of a traffic light. It should take the current state of the traffic light as input
+     * and return the next state.
      */
-    private static void exercise3() {
+    private static void exercise3() throws InterruptedException {
         System.out.println("\nExercise 3: ");
         // Your code here
+        enum TrafficLight {
+            RED, YELLOW, GREEN;
+
+            public TrafficLight next() {
+                return this.equals(RED) ? GREEN : this.equals(GREEN) ? YELLOW : this.equals(YELLOW) ? RED: null;
+            }
+        }
+        TrafficLight current =TrafficLight.RED;
+        System.out.println("Current state: " + current);
+
+        for (int i = 0; i < 10; i++) {
+            current = current.next();
+            System.out.println("Next state: " + current);
+        }
     }
 
     /**
@@ -64,6 +103,27 @@ public class Exercises {
     private static void exercise4() {
         System.out.println("\nExercise 4: ");
         // Your code here
+        enum Days {
+            MONDAY(false), TUESDAY(false), WEDNESDAY(false), THURSDAY(false),
+            FRIDAY(false), SATURDAY(true), SUNDAY(true);
+
+            private final boolean isWeekend;
+
+            Days(boolean isWeekend) {
+                this.isWeekend = isWeekend;
+            }
+            public boolean isWeekend() {
+                return isWeekend;
+            }
+        }
+
+        Days day = Days.SATURDAY;
+        if (day.isWeekend()) {
+            System.out.println("Weekend: Party hard!");
+        }else {
+            System.out.println("It's not weekend!We had to work..");
+        }
+
     }
 
     /**
@@ -72,14 +132,47 @@ public class Exercises {
      *
      * Create an enum called "Operator" with the values "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE".
      *
-     * Write a method that takes two integers and an Operator value as input, performs the corresponding operation on the integers, and returns the result.
+     * Write a method that takes two integers and an Operator value as input, performs the corresponding operation on the integers,
+     * and returns the result.
      */
     private static void exercise5() {
         System.out.println("\nExercise 5: ");
-        // Your code here
+
+        enum Operator {
+            ADD {
+                public double apply(double a, double b) {
+                    return a + b;
+                }
+            },
+            SUBTRACT {
+                public double apply(double a, double b) {
+                    return a - b;
+                }
+            },
+            MULTIPLY {
+                public double apply(double a, double b) {
+                    return a * b;
+                }
+            },
+            DIVIDE {
+                public double apply(double a, double b) {
+                    return a / b;
+                }
+            };
+
+            public double apply(double a, double b){
+                throw new AbstractMethodError("This method should not be overridden!");
+            }
+        }
+
+        Operator operator = Operator.ADD;
 
         double num1 = 5;
         double num2 = 2;
+
+        double result = operator.apply(num1, num2);
+        System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
     }
+
 
 }
