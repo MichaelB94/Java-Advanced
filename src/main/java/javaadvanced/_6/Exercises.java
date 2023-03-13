@@ -49,20 +49,19 @@ public class Exercises {
         System.out.println("\nExercise 2: ");
         // Your code here
         enum Seasons {
-            SPRING("March","April","May"),
-            SUMMER("June","July","August"),
-            FALL("September","October","November"),
-            WINTER("December","January","February");
-            private final String[] months;
-            Seasons(String... months) {
+            SPRING("March,April,May"),
+            SUMMER("June,July,August"),
+            FALL("September,October,November"),
+            WINTER("December,January,February");
+            private String months;
+            Seasons(String months) {
                 this.months=months;
             }
-            public String[] getMonths() {
+            public String getMonths() {
                 return months;
             }
         }
-        Seasons season = Seasons.SUMMER;
-        System.out.println(season + ": " + Arrays.toString(season.getMonths()));
+        System.out.println(Seasons.SUMMER.getMonths());
     }
 
     /**
@@ -89,7 +88,7 @@ public class Exercises {
 
         for (int i = 0; i < 10; i++) {
             current = current.next();
-            System.out.println("Next state: " + current);
+            System.out.println("current state: " + current);
         }
     }
 
