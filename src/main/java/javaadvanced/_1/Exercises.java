@@ -103,9 +103,10 @@ public class Exercises {
 
         if (max != 10 || min != 1) {
             System.out.println("3a. Incorrect min or max values");
-        }else{
+        } else {
             System.out.println("the min is " + min + " and the max is " + max);
         }
+
 
         // 3b. Find which items from set a are also in set b, add these to itemsContainedInBothSets
         //     use the `contains` method and "nested" for loop
@@ -115,12 +116,11 @@ public class Exercises {
 
         // Your code
         for (Integer number : setA) {
-            for (Integer number2 : setB) {
-                if (setB.contains(number)) {
-                    itemsContainedInBothSets.add(number);
-                }
+            if (setB.contains(number)) {
+                itemsContainedInBothSets.add(number);
             }
         }
+
 
         if (!itemsContainedInBothSets.equals(Set.of(5, 6, 7, 8, 9, 10))) {
             System.out.println("3b. Incorrect number of items in itemsContainedInBothSets");
@@ -129,25 +129,29 @@ public class Exercises {
         }
     }
 
-    /**
-     * 4: BONUS! This is an optional task, but it is recommended you complete it
-     * ----------------------------------------------------------------------
-     */
-    private static void exercise4() {
-        Set<Integer> orderedNumbers = new TreeSet<>();
-        orderedNumbers.addAll(Set.of(5, 3, 1, 2, 4, 6, 7, 8, 9, 10));
-        // 4a. Find the min value in the TreeSet with as few loops as possible,
-        //     you can use `break;` to exit the loop once you've found it!
-        int min = Integer.MAX_VALUE;
-        // Your code
-        for (Integer number : orderedNumbers) {
-            min = Math.min(min, number);
+
+        /**
+         * 4: BONUS! This is an optional task, but it is recommended you complete it
+         * ----------------------------------------------------------------------
+         */
+        private static void exercise4() {
+            Set<Integer> orderedNumbers = new TreeSet<>();
+            orderedNumbers.addAll(Set.of(5, 3, 1, 2, 4, 6, 7, 8, 9, 10));
+            // 4a. Find the min value in the TreeSet with as few loops as possible,
+            //     you can use `break;` to exit the loop once you've found it!
+            int min = Integer.MAX_VALUE;
+            // Your code
+            for (Integer number : orderedNumbers) {
+                min = Math.min(min, number);
+                break;
+            }
+
+            if (min != 1) {
+                System.out.println("4a. Incorrect min value");
+            } else {
+                System.out.println("4a. Correct min value");
+            }
         }
 
-        if (min != 1) {
-            System.out.println("4a. Incorrect min value");
-        } else {
-            System.out.println("4a. Correct min value");
-        }
-    }
 }
+

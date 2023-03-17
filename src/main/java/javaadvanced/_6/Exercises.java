@@ -69,7 +69,6 @@ public class Exercises {
      *
      *
      * Create an enum called "TrafficLight" with the values "RED", "YELLOW", "GREEN".
-     *
      * Write code that simulates the behavior of a traffic light. It should take the current state of the traffic light as input
      * and return the next state.
      */
