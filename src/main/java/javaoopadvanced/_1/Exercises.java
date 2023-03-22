@@ -54,6 +54,22 @@ public class Exercises {
     private static void exercise3() {
         System.out.println("\nExercise 3: ");
         // Your code here
+        Dog myDog = new Dog(118.5,96,"Alano");
+        Bird myBird = new Bird(62.4,12.5,120);
+        Fish myFish = new Fish(80,25.5,"Carp");
+
+
+        if (myDog.runSpeedMetersPerSecond() > myBird.flySpeedMetersPerSecond()
+                || myDog.runSpeedMetersPerSecond() > myFish.swimSpeedMetersPerSecond()){
+            System.out.println("The dog is the fastest.It run at " + myDog.runSpeedMetersPerSecond() + " m/s.");
+        }else if (myBird.flySpeedMetersPerSecond() > myFish.swimSpeedMetersPerSecond()
+                || myBird.flySpeedMetersPerSecond() > myDog.runSpeedMetersPerSecond()){
+            System.out.println("The bird is the fastest.It run at " + myBird.flySpeedMetersPerSecond() + " m/s.");
+        }else if (myFish.swimSpeedMetersPerSecond() > myDog.runSpeedMetersPerSecond()
+                || myFish.swimSpeedMetersPerSecond() > myDog.runSpeedMetersPerSecond()){
+            System.out.println("Thefish is the fastest.It run at " + myFish.swimSpeedMetersPerSecond() + " m/s.");
+        }
+
 
     }
 }
