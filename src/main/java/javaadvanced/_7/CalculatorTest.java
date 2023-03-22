@@ -75,6 +75,6 @@ class CalculatorTest {
         Assertions.assertEquals(0,calculator.power(0,5));
         Assertions.assertEquals(9,calculator.power(-3,2));
         Assertions.assertEquals(0.25,calculator.power(0.5,2));
-        //Assertions.assertEquals(1,calculator.power(3,-2)); come posso fare con esponente negativo?
+        Assertions.assertEquals(0.04,calculator.power(5,-2));
     }
 }
