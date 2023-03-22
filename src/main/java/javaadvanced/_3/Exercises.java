@@ -61,11 +61,10 @@ public class Exercises {
 
         // Your code here
         for (String word : words) {
-            int prevValue = 0;
             if (wordCount.containsKey(word)) {
                 wordCount.put(word, wordCount.get(word) + 1);
             } else {
-                wordCount.put(word, (prevValue + 1));
+                wordCount.put(word, (1));
             }
         }
         System.out.println(wordCount);

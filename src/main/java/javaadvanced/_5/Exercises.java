@@ -78,10 +78,10 @@ public class Exercises {
         System.out.println("\nExercise 4: ");
         // Your code here
 
-        Double num1 = 10.0;
+        int num1 = 10;
         String num2AsString = "0.0";
          try{
-            System.out.println(num1/Double.parseDouble(num2AsString));
+            System.out.println(num1/Integer.parseInt(num2AsString));
         }
         // Your catch blocks here
          catch (NumberFormatException | ArithmeticException e) {

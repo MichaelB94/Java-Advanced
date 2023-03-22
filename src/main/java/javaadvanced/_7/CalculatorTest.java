@@ -21,6 +21,11 @@ class CalculatorTest {
     void exercise1() {
         System.out.println("\nExercise 1: ");
         // Your code here
+        Calculator calculator = new Calculator();
+        Assertions.assertEquals(10, calculator.add(5,5));
+        Assertions.assertEquals(10, calculator.add(10,0));
+        Assertions.assertEquals(10, calculator.subtract(15,5));
+        Assertions.assertEquals(10, calculator.subtract(0,-10));
     }
 
     /**
@@ -41,6 +46,10 @@ class CalculatorTest {
 
         Calculator calculator = new Calculator();
         Assertions.assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
+        Assertions.assertEquals(10, calculator.divide(100,10));
+        Assertions.assertEquals(100, calculator.multiply(10,10));
+        Assertions.assertEquals(0, calculator.multiply(10,0));
+        Assertions.assertEquals(10, calculator.multiply(-5,-2));
     }
 
     /**
@@ -59,5 +68,13 @@ class CalculatorTest {
     void exercise3() {
         System.out.println("\nExercise 3: ");
         // Your code here
+        Calculator calculator = new Calculator();
+        Assertions.assertEquals(9,calculator.power(3,2));
+        Assertions.assertEquals(3,calculator.power(3,1));
+        Assertions.assertEquals(1,calculator.power(3,0));
+        Assertions.assertEquals(0,calculator.power(0,5));
+        Assertions.assertEquals(9,calculator.power(-3,2));
+        Assertions.assertEquals(0.25,calculator.power(0.5,2));
+        //Assertions.assertEquals(1,calculator.power(3,-2)); come posso fare con esponente negativo?
     }
 }
