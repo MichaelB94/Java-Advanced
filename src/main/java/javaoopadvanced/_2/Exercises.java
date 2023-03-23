@@ -65,6 +65,6 @@ public class Exercises {
         Piano piano = new Piano();
         piano.play();
         guitar.play();
-        
+
     }
 }
