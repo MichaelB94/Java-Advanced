@@ -11,7 +11,7 @@ public class Exercises {
      *
      * Create an abstract class called "Shape" with fields of height and width
      *
-     * Create classes called "Rectangle" and "Circle" that extend the GeometricShape class and implement the calculateArea() method.
+     * Create classes called "Rectangle" and "Circle" that extend the Shape class and implement the calculateArea() method.
      *
      * Create instances of both and calculate their area
      *
@@ -37,6 +37,13 @@ public class Exercises {
     private static void exercise2() {
         System.out.println("\nExercise 2: ");
         // Your code here
+        Car car = new Car();
+        Boat boat = new Boat();
+
+        car.moveForward();
+        car.moveBackward();
+        boat.moveForward();
+        boat.moveBackward();
     }
 
     /**
@@ -54,5 +61,10 @@ public class Exercises {
     private static void exercise3() {
         System.out.println("\nExercise 3: ");
         // Your code here
+        Guitar guitar = new Guitar();
+        Piano piano = new Piano();
+        piano.play();
+        guitar.play();
+        
     }
 }
