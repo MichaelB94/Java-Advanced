@@ -1,9 +1,8 @@
 package javaoopadvanced._2;
 
 public class Circle extends Shape {
-    Circle(double height, double width){
-        super(height, width);
-        //if (height == width){}
+    Circle(double radius){
+        super(radius,radius);
     }
 @Override
     public double getArea(){

@@ -22,6 +22,10 @@ public class Exercises {
     private static void exercise1() {
         System.out.println("\nExercise 1: ");
         // Your code here
+        Rectangle rectangle = new Rectangle(10,5);
+        Circle circle = new Circle(5);
+        System.out.println(circle.getArea());
+        System.out.println(rectangle.getArea());
     }
 
     /**
