@@ -7,14 +7,14 @@ public class Exercises {
      *
      * In the main method, create a variable x as a random number between 0-100 using Math.random() * 100;
      *
-     * Use a ternary operator to check if x is greater than or equal to 50. If it is, print "x is greater than or equal to 50". If it's not, print "x is less than 50".
+     * Use a ternary operator to check if x is greater than or equal to 50. If it is, print "x is greater than or equal to 50".
+     * If it's not, print "x is less than 50".
      *
      * Experiment with different values of x and observe the output
      */
     private static void exercise1() {
-        System.out.println("\nExercise 1: ");
-        // Your code here
     }
+
 
     /**
      * 2:
@@ -45,9 +45,6 @@ public class Exercises {
      *
      * Print the results
      */
-    private static void exercise3() {
-        System.out.println("\nExercise 3: ");
-        // Your code here
-    }
+
 
 }
